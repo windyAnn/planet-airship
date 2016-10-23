@@ -1,0 +1,51 @@
+#system {
+  width: 600px;
+  height: 636px;
+  background-color: #001b34;
+  position: relative; }
+
+#system .planet {
+  width: 284px;
+  height: 284px;
+  background-color: #0433ff;
+  border-radius: 50% 50%;
+  position: absolute;
+  top: 140px;
+  left: 128px;
+  z-index: 99; }
+
+#system .airship {
+  width: 126px;
+  height: 36px;
+  border-radius: 5px;
+  background-color: #999;
+  position: absolute;
+  left: 207px;
+  text-align: center;
+  line-height: 36px;
+  font-size: 26px;
+  overflow: hidden; }
+
+#system .airship-1 {
+  top: 50px; }
+
+/*283+50*/
+#system .airship-2 {
+  top: 478px; }
+
+#system .oilPercentNum {
+  position: absolute;
+  z-index: 9999;
+  left: 30%; }
+
+#system .oilPercentColor {
+  width: 126px;
+  height: 36px;
+  z-index: 999;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #0433ff; }
+
+/*# sourceMappingURL=style.css.map */

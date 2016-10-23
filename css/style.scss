@@ -1,0 +1,63 @@
+#system{
+  width: 600px;
+  height: 636px;
+  background-color: #001b34;
+  position: relative;
+}
+$planetHeight:284px;
+$planetWidth:284px;
+$planetTop:140px;
+$planetLeft:128px;
+$airshipTop1:50px;
+$airshipWidth:126px;
+$airshipHeight:36px;
+
+
+#system .planet{
+  width: $planetWidth;
+  height: $planetHeight;
+  background-color: #0433ff;
+  border-radius: 50% 50%;
+  position: absolute;
+  top: $planetTop;
+  left: $planetLeft;
+  z-index: 99;
+}
+#system .airship{
+  width: $airshipWidth;
+  height: $airshipHeight;
+  border-radius: 5px;
+  background-color: #999;
+  position: absolute;
+  left: (($planetHeight/2) +  $planetLeft)-$airshipWidth/2;
+  text-align: center;
+  line-height: $airshipHeight;
+  font-size: 26px;
+  overflow: hidden;
+}
+#system .airship-1{
+  top: $airshipTop1;
+
+
+}
+/*283+50*/
+#system .airship-2{
+  top: $planetTop + $planetHeight + $planetTop - $airshipTop1 - $airshipHeight;
+
+}
+#system  .oilPercentNum {
+  position: absolute;
+  z-index: 9999;
+  left: 30%;
+}
+#system .oilPercentColor{
+  width: $airshipWidth;
+  height: $airshipHeight;
+  z-index: 999;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  top:0;
+  background-color: #0433ff;;
+
+}
