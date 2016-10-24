@@ -21,7 +21,7 @@ $airshipHeight:36px;
   position: absolute;
   top: $planetTop;
   left: $planetLeft;
-  z-index: 99;
+
 }
 #system .airship{
   width: $airshipWidth;
@@ -32,8 +32,9 @@ $airshipHeight:36px;
   left: (($planetHeight/2) +  $planetLeft)-$airshipWidth/2;
   text-align: center;
   line-height: $airshipHeight;
-  font-size: 26px;
+
   overflow: hidden;
+  z-index: 99;
 }
 #system .airship-1{
   top: $airshipTop1;
@@ -48,9 +49,10 @@ $airshipHeight:36px;
 #system  .oilPercentNum {
   position: absolute;
   z-index: 9999;
-  left: 30%;
+  left: 40%;
+  font-size: 18px;
 }
-#system .oilPercentColor{
+#system .oilPercentIcon{
   width: $airshipWidth;
   height: $airshipHeight;
   z-index: 999;
@@ -59,5 +61,14 @@ $airshipHeight:36px;
   left: 0;
   top:0;
   background-color: #0433ff;;
-
+}
+.lessAlert{
+  color: red;
+  font-size: 26px;
+}
+.btns input:hover{
+  background-color: #0433ff;
+}
+.btns input{
+  cursor: pointer;
 }

@@ -11,8 +11,7 @@
   border-radius: 50% 50%;
   position: absolute;
   top: 140px;
-  left: 128px;
-  z-index: 99; }
+  left: 128px; }
 
 #system .airship {
   width: 126px;
@@ -23,8 +22,8 @@
   left: 207px;
   text-align: center;
   line-height: 36px;
-  font-size: 26px;
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: 99; }
 
 #system .airship-1 {
   top: 50px; }
@@ -36,9 +35,10 @@
 #system .oilPercentNum {
   position: absolute;
   z-index: 9999;
-  left: 30%; }
+  left: 40%;
+  font-size: 18px; }
 
-#system .oilPercentColor {
+#system .oilPercentIcon {
   width: 126px;
   height: 36px;
   z-index: 999;
@@ -47,5 +47,15 @@
   left: 0;
   top: 0;
   background-color: #0433ff; }
+
+.lessAlert {
+  color: red;
+  font-size: 26px; }
+
+.btns input:hover {
+  background-color: #0433ff; }
+
+.btns input {
+  cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */
