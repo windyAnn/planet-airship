@@ -1,12 +1,12 @@
 (function ($) {
+
     var SignalDeal = function () {
         //接受信号
-    };
-    SignalDeal.prototype = {
-        accept: function () {
+        this.accept = function () {
 
-        },
-        deal:function () {
+
+        };
+        this.deal = function () {
 
         }
     };
@@ -24,6 +24,17 @@
             //消耗能源
             energySelf.energyConsumeTimer = setInterval(function () {
                 energySelf.gasOil -= 5;
+                if (energySelf.gasOil > 0 && energySelf.gasOil < 20) {
+                    if (energySelf.onLessOil) {
+                        energySelf.onLessOil();
+                    }
+                }else {
+                    if (energySelf.lessAlert){
+                        energySelf.lessAlert.remove();
+                        clearInterval(energySelf.alertTimer1);
+                    }
+
+                }
                 if (energySelf.gasOil <= 0) {
                     clearInterval(energySelf.energyConsumeTimer);
                     if (energySelf.onNoOil) {
@@ -45,14 +56,6 @@
             },10);
         }
     };
-    var Destroy = function () {
-        
-    };
-    Destroy.prototype = {
-      disappear: function () {
-          
-      }  
-    };
     var Airship = function () {
         this.planet = $(".planet");
         this.airship = $(".airship");
@@ -73,9 +76,9 @@
         this.energy.onNoOil = function () {
             that.stop();
         };
-      /*  this.energy.onLessOil = function () {
+        this.energy.onLessOil = function () {
             that.lessOilAlert();
-        };*/
+        };
         this.energy.onFullOil = function () {
             that.turnOffOil();
         };
@@ -128,9 +131,9 @@
             var alertSelf = this;
             alertSelf.alertTimer1 = setInterval(function () {
                 alertSelf.oilTableObj.find(".lessAlert").fadeIn()
-                                                        .fadeOut();
+                    .fadeOut();
                 alertSelf.addOilbtn.fadeIn()
-                                  .fadeOut();
+                    .fadeOut();
 
             },30);
 
@@ -152,14 +155,17 @@
             clearInterval(this.addOilNumTimer);
         },
         stop: function () {
-           clearInterval(this.energy.energyConsumeTimer);//停止邮箱供油
+            clearInterval(this.energy.energyConsumeTimer);//停止邮箱供油
             //停止油表上的油量的减少
             clearInterval(this.oilConsumeTimer);
             //停止船再运动了
             clearInterval(this.shipTravelTimer);
         }
     };
-    
+
+    Airship.prototype.destroy = function () {
+
+    };
     var airship = new Airship();
 
     $(".start").bind("click",function () {
